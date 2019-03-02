@@ -6,6 +6,7 @@ public class TrivialHash {
     private static boolean[][] hash = new boolean[MAX+1][2];
 
     private static boolean search(int target) {
+    	// Return the value of the index target of the hash
     	if (target < 0)
     		return hash[Math.abs(target)][1];
     	else
@@ -14,6 +15,10 @@ public class TrivialHash {
     }
 
     private static void insert(int[] a, int n){
+    	/*
+    	 * If n is negative, set the 1st index of the index absolute value of it in the
+    	 * hash to true. If positive or 0, set the 2nd index to true
+    	 */
         if (n < 0)
         	hash[Math.abs(n)][1] = true;
         else
